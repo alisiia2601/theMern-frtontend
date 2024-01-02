@@ -1,0 +1,59 @@
+body {
+    font-family: "Rethink Sans", sans-serif;
+    background-color: #f4f4f4; /* Set a light background color */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .formContainer {
+    max-width: 400px; /* Increased max-width for better readability */
+    margin: 50px auto; /* Center the form on the page */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .inputField {
+    margin-bottom: 20px;
+  }
+  
+  .inputField label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  .inputField input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .submitButton {
+    padding: 12px;
+    background-color: #e31717;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; 
+  }
+  
+  .submitButton:hover {
+    background-color: #970e0e;
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 16px;
+  }
+  

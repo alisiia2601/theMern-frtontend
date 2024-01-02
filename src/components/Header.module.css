@@ -1,0 +1,73 @@
+body, h1, h2, h3, p, margin, padding {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: "Rethink Sans", sans-serif;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .header a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease; 
+  }
+  
+  .header a:hover {
+    color: #e31717;
+  }
+  
+  .header h1 {
+    margin: 0;
+    color: #e31717;
+  }
+  
+  .header-actions {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-actions button {
+    margin-left: 15px;
+    padding: 10px 15px;
+    background-color: #e31717;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; 
+  }
+  
+  .header-actions button:hover {
+    background-color: #970e0e; 
+  }
+
+
+  .button {
+    margin-left: 15px;
+    padding: 10px 15px;
+    background-color: #e31717;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #970e0e;
+    transform: scale(1.05);
+  }
+  
