@@ -1,0 +1,39 @@
+.post {
+    display: flex;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .postInfo {
+    margin-left: 10px;
+  }
+  
+  .post h2 {
+    margin: 0;
+    font-size: 1.2em;
+  }
+  
+  .postUrl {
+    font-size: 0.8em;
+    color: #777;
+  }
+  
+  .post p {
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  .post span {
+    font-size: 0.9em;
+  }
+  
+  .post span a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .post span a:hover {
+    text-decoration: underline;
+  }
+  

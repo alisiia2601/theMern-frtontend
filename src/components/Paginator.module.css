@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  button {
+    margin: 0 5px;
+    padding: 8px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  button.active {
+    background-color: #3498db;
+    color: #fff;
+    border-color: #3498db;
+  }
+  

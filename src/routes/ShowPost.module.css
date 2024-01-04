@@ -1,0 +1,29 @@
+.post {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  
+  .postInfo {
+    margin-left: 10px;
+  }
+  
+  .post h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+  
+  .postUrl {
+    font-size: 16px;
+    color: #777;
+  }
+  
+  .postBody p {
+    margin: 10px 0;
+  }
+  
+  .postImage {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+  }
