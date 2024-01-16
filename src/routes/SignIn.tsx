@@ -26,7 +26,9 @@ export const action = async (args: ActionFunctionArgs) => {
     }
 
     const { token } = await response.json();
+    console.log(token);
     auth.signIn(token);
+
 
     return redirect('/');
 }
