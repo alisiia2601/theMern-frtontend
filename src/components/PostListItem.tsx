@@ -1,29 +1,31 @@
-import { Link } from 'react-router-dom';
-import { Post } from '../types';
-import classes from './PostListItem.module.css';
-import VoteComponent from './Vote';
+import { Link } from "react-router-dom";
+import { Post } from "../types";
+import Styles from "./PostListItem.module.css";
+import VoteComponent from "./Vote";
+import DeletePost from "./DeletePost";
 
 const PostListItem = ({ post }: { post: Post }) => {
   return (
-    <div className={classes.post}>
+    <div className={Styles.post} key={post._id}>
+      <div className={Styles.contentBox}>
       <VoteComponent post={post} />
-      <div className={classes.postInfo}>
-        { post.link ? (
-          <Link to={post.link}>
-            <h2>{post.title}<span className={classes.postUrl}>({post.link})</span></h2>
-          </Link>
-        ) : (
-          <Link to={`/posts/${post._id}`}>
-            <h2>{post.title}</h2>
-          </Link>
-        )}
-        <p>by {post.author.userName}</p>
-        { post.link && (
-          <span><Link to={`/posts/${post._id}`}>Show post</Link></span>
-        )}
-      </div>
-    </div>
-  )
-}
+      <div className={Styles.postContent}>
+        <Link to={`/posts/${post._id}`}>
+          <h2 className={Styles.title}>{post.title}
+          <span className={Styles.link}>{post.link ? " (Link in post)" : ""}</span></h2>
+        </Link>
 
-export default PostListItem
+        <p className={Styles.author}>by {post.author.userName}</p>
+        {post.link && (
+          <span>
+            <Link to={`/posts/${post._id}`}></Link>
+          </span>
+        )}
+        </div>
+      </div>
+      <DeletePost post={post} />
+    </div>
+  );
+};
+
+export default PostListItem;

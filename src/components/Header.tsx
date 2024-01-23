@@ -8,7 +8,9 @@ const Header = () => {
 
     return (
         <div className={classes.header}>
-            <h1>The Mern</h1>
+            <Link to="/" className={classes.logoLink}>
+                <h1>The Mern</h1>
+            </Link>
             <div className={classes.headerActions}>
                 {isAuthenticated ?
                     <>

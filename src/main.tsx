@@ -13,12 +13,26 @@ import RequireAuth from './components/RequireAuth.tsx';
 import ShowPost, { loader as showPostLoader } from './routes/ShowPost.tsx';
 import { action as createCommentAction } from './components/CommentForm.tsx';
 import { action as voteAction } from './components/Vote.tsx';
+import { action as deletePostAction } from "./components/DeletePost";
+import { action as deleteCommentAction } from "./components/DeleteComment";
+import UpdatePost, { action as updatePostAction } from "./routes/UpdatePost.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
+      {
+        index: true,
+        loader: indexLoader,
+        element: <Index />,
+      },
+      {
+        path: "posts",
+        action: () => {
+          return redirect("/");
+        },
+      },
       {
         path: "sign-up",
         action: signUpAction,
@@ -61,7 +75,20 @@ const router = createBrowserRouter([
           {
             path: "/posts/:postId/vote",
             action: voteAction
-          }
+          },
+          {
+            path: "/posts/:postId/delete-post",
+            action: deletePostAction,
+          },
+          {
+            path: "/posts/:postId/comments/:commentId/delete-comment",
+            action: deleteCommentAction,
+          },
+          {
+            path: "/posts/:id/update",
+            action: updatePostAction,
+            element: <UpdatePost />,
+          },
         ]
       },
     ]

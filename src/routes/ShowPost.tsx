@@ -1,12 +1,15 @@
 import { Link, LoaderFunctionArgs, useLoaderData } from "react-router-dom";
 import { Post } from "../types";
-import classes from "./ShowPost.module.css";
 import CommentForm from "../components/CommentForm";
-import CommentComponent from "../components/Comment";
 import VoteComponent from "../components/Vote";
+import DeleteComment from "../components/DeleteComment";
+import DeletePost from "../components/DeletePost";
+import Styles from "./ShowPost.module.css";
 
 export const loader = async (args: LoaderFunctionArgs) => {
-  const { id } = args.params;
+  const { params } = args;
+
+  const { id } = params;
 
   const response = await fetch(
     import.meta.env.VITE_BACKEND_URL + "/posts/" + id,
@@ -27,39 +30,39 @@ const ShowPost = () => {
 
   return (
     <>
-      <div className={classes.post}>
+      <div className={Styles.container}>
         <VoteComponent post={post} />
-        <div className={classes.postInfo}>
+        <div className={Styles.postContent}>
+          <h2 className={Styles.title}>{post.title}</h2>
           {post.link ? (
             <Link to={post.link}>
-              <h2>
-                {post.title}
-                <span className={classes.postUrl}>({post.link})</span>
-              </h2>
+              <p className={Styles.link}>({post.link})</p>
             </Link>
           ) : (
-            <h2>{post.title}</h2>
+            ""
           )}
-          <p>by {post.author.userName}</p>
           {post.body && (
-            <div className={classes.postBody}>
-              <p>{post.body}</p>
+            <div className={Styles.postBody}>
+              <p className={Styles.bodyContent}>{post.body}</p>
+              <p className={Styles.author}>by {post.author.userName}</p>
             </div>
           )}
-              {post.image && (
-                <img
-                  className={classes.postImage}
-                  src={`${import.meta.env.VITE_BACKEND_URL}/files/${
-                    post.image.id
-                  }`}
-                />
-              )}
         </div>
       </div>
-      <CommentForm postId={post._id} />
-      {post.comments?.map((comment) => (
-        <CommentComponent key={comment._id} comment={comment} />
-      ))}
+      <div className={Styles.buttonContainer}>
+        <DeletePost post={post} />
+        <Link className={Styles.updatePostButton} to={`/posts/${post._id}/update`}>Update post</Link>
+      </div>
+      <div className={Styles.commentContainer}>
+        <CommentForm postId={post._id} />
+        {post.comments?.map((comment) => (
+          <div key={comment._id} className={Styles.commentContent}>
+            <p className={Styles.commentAuthor}>{comment.author.userName}</p>
+            <p>{comment.body}</p>
+            <DeleteComment post={post} comment={comment} />
+          </div>
+        ))}
+      </div>
     </>
   );
 };
