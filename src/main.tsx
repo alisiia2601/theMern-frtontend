@@ -5,7 +5,7 @@ import './index.css';
 import { RouterProvider, createBrowserRouter, redirect } from 'react-router-dom';
 import SignUp, { action as signUpAction } from './routes/SignUp.tsx';
 import SignIn, { action as signInAction } from './routes/SignIn.tsx';
-import Index, { loader as indexLoader } from './routes/Index.tsx';
+import Index, { loader as indexLoader } from './routes/index.tsx';
 import auth from './lib/auth.ts';
 import CreatePost from './routes/CreatePost.tsx';
 import { action as createPostAction } from './routes/CreatePost.actions.ts';
