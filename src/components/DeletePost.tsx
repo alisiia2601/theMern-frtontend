@@ -1,7 +1,7 @@
 import { ActionFunctionArgs, Form, redirect } from "react-router-dom"
 import auth from "../lib/auth";
 import { Post } from "../types";
-import Styles from "./DeletePost.module.css"
+import Styles from "./Deletepost.module.css"
 
 export const action = async (args: ActionFunctionArgs) => {
     const { postId } = args.params;
